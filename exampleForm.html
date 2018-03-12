@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>WDV341 Intro PHP - Form Example</title>
+
+    <style>
+
+      form{
+        width: 300px;
+        margin-left: 20px;
+        padding: 10px;
+      }
+
+      fieldset{
+        margin-bottom: 10px;
+      }
+
+      label{  
+        display: inline-block;
+        width: 100px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <h1>WDV341 Intro PHP</h1>
+    <h2>WDV101 Intro HTML and CSS Chapter 9 - Creating Forms - Code Example</h2>
+    <!-- <p><strong>Basic Form Handler</strong> - This process will display the 'name = value' pairs for all the elements of a form. This summary will on any number of form elements regardless of their name attribute value. </p>
+    <p>Use <strong>basicFormExample.php</strong> in the action attribute of your form. </p>
+    <p>Field '<strong>name</strong>' - The value of the name attribute from the HTML form element.</p>
+    <p>Field <strong>'value</strong>' - The value entered in the field. This will vary depending upon the HTML form element.</p> -->
+
+    <form id="form1" name="form1" method="post" action="formHandler.php">
+
+      <p>
+        <label>First Name:</label>
+        <input type="text" name="firstName" id="firstName" />
+      </p>
+
+      <p>
+        <label>Last Name:</label>
+        <input type="text" name="lastName" id="lastName" />
+      </p>
+
+      <p>
+        <label>School:</label>
+        <input type="text" name="school" id="school" />
+      </p>
+
+      <fieldset>
+        <legend>Student Status:</legend>
+        <p>
+          <label>Full Time:</label>
+          <input type="radio" name="studentStatus" value="Full Time">
+        </p>
+        <p>
+          <label>Part Time:</label>
+          <input type="radio" name="studentStatus" value="Part Time">
+        </p>
+        <p>
+          <label>Not Enrolled:</label>
+          <input type="radio" name="studentStatus" value="Not Enrolled">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Extra Interests:</legend>
+        <p>
+          <label>Clubs:</label>
+          <input type="checkbox" name="extraInterests[]" value="Clubs">
+        </p>
+        <p>
+          <label>Sports:</label>
+          <input type="checkbox" name="extraInterests[]" value="Sports">
+        </p>
+        <p>
+          <label>Internships:</label>
+          <input type="checkbox" name="extraInterests[]" value="Internships">
+        </p>
+        <p>
+          <label>Volunteering:</label>
+          <input type="checkbox" name="extraInterests[]" value="Volunteering">
+        </p>
+      </fieldset>
+
+      <p>
+        <label style="width: 150px;">Expected Graduation:</label>
+        <select name="expectedGraduation">
+          <script>
+            let currentDate = new Date();
+            let currentYear = currentDate.getFullYear();
+            document.write("<option value=''>Please Select...</option>");
+            for(let i = 0; i < 6; i++){
+              document.write("<option value='" + currentYear + "'>" + currentYear + "</option>");
+              currentYear++;
+            }
+          </script>
+        </select>
+      </p>
+
+      <p>
+        <input type="submit" name="button" id="button" value="Submit" />
+        <input type="reset" name="button2" id="button2" value="Reset" />
+      </p>
+
+    </form>
+
+  </body>
+
+</html>
